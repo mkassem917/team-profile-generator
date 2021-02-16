@@ -1,0 +1,23 @@
+body {
+background-color: white;
+}
+
+h3 {
+    text-align: center;
+}
+
+.card-body, .card {
+    background-color: #97CBFF;
+    margin: 25px;
+    padding: 2px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    
+}
+
+.jumbotron  {
+background-color: red;
+color: white;
+padding: 8px;
+text-align: center;
+}
+
