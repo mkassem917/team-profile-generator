@@ -6,27 +6,36 @@
   ![GitHub License](https://img.shields.io/badge/License-mit-blue.svg)
 
 
-Link:  https://mkassem917.github.io/readme-generator/
+Link:  https://mkassem917.github.io/team-profile-generator/ 
 
-Video: https://drive.google.com/file/d/14gBVbiGulGv_RM4vbxJxKOroazR69n0Q/view
+Video: https://drive.google.com/file/d/1Y4OUD71iKvfquBnKowbqrs23rPHju_Vu/view 
 
 ## Example of working code
 
-![Project # 9 README GENERATOR](https://user-images.githubusercontent.com/74279957/107312757-23cce500-6a5f-11eb-9636-5f73a1161654.gif)
+![Project # 10 TEAM-PROFILE-GENERATOR](https://user-images.githubusercontent.com/74279957/108300494-692f9780-716e-11eb-8eb7-24cfc37abf5f.gif)
+
+![team-profile-generator](assets/test.png)
+![team-profile-generator](assets/snippet.png)
+![team-profile-generator](assets/team-members.png)
+
 
 
 **Description**
 
-This is a README Generator
+The Team Profile Generator is running a node.js command line application that requests information from the user.
 
-* Use Node.js to create a README.md file
-* Allows the developer to commit more time on projects and less time on creating a README.md file
+ Before running the application the user must perform an npm install to install all required dependencies.
 
+ Node.js to create scripts that will output to an HTML file of Team Members
+ 
+
+**All criteria has been met from the homework README.md file**
 
 **Contents:**
 
 * index.html
-* utils - generateMarkdown.js 
+* index.js
+* Lib, output, template, tests folders
 * License
 * assets  folder - Contains screenshots & gif
 * README.md
@@ -38,7 +47,7 @@ This is a README Generator
 * Stackoverflow
 * npm.js
 * nodejs.org
-* process.cwd() Method from geeksforgeeks.org 
+* https://unsplash.com/s/photos/ - for stock images
 
   
   
@@ -50,4 +59,3 @@ This is a README Generator
 
   
 
-https://unsplash.com/s/photos/
