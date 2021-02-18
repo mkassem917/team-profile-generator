@@ -75,37 +75,90 @@ const indexMenu = () => {
 
     const createEngineer = () => {
         inquirer.prompt([{
-                type: 'input',
-                name: 'engineerName',
-                message: "What is your engineer's name?"
-            },
-            {
-                type: 'input',
-                name: 'engineerId',
-                message: "What is your engineer's id?"
-            },
-            {
-                type: 'input',
-                name: 'engineerEmail',
-                message: "What is your engineer's email address?",
-                validate: function (email) {
-                    // Regex mail check (return true if valid mail)
-                    return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
+                    type: 'input',
+                    name: 'engineerName',
+                    message: "What is your engineer's name?"
+                },
+                {
+                    type: 'input',
+                    name: 'engineerId',
+                    message: "What is your engineer's id?"
+                },
+                {
+                    type: 'input',
+                    name: 'engineerEmail',
+                    message: "What is your engineer's email address?",
+                    validate: function (email) {
+                        // Regex mail check (return true if valid mail)
+                        return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
+                    }
+                },
+                {
+                    type: 'input',
+                    name: 'github',
+                    message: "What is your engineer's github's username?"
                 }
-            },
-            {
-                type: 'input',
-                name: 'github',
-                message: "What is your engineer's github's username?"
-            }
-        ]);
-        then(answers => {
-            const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.github);
-            teamArray.push(engineer);
-            idArray.push(answers.engineerId);
+            ])
+            .then(answers => {
+                const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.github);
+                teamArray.push(engineer);
+                idArray.push(answers.engineerId);
+                teamMember();
+            });
+    }
+
+    const createIntern = () => {
+        inquirer.prompt([{
+                    type: 'input',
+                    name: 'internName',
+                    message: "What is your intern's name?"
+                },
+                {
+                    type: 'input',
+                    name: 'engineerId',
+                    message: "What is your intern's id?"
+                },
+                {
+                    type: 'input',
+                    name: 'engineerEmail',
+                    message: "What is your intern's email address?",
+                    validate: function (email) {
+                        // Regex mail check (return true if valid mail)
+                        return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
+                    }
+                },
+                {
+                    type: 'input',
+                    name: 'school',
+                    message: "What is your intern's school name?"
+                }
+            ])
+            .then(answers => {
+                const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.school);
+                teamArray.push(intern);
+                idArray.push(answers.internId);
+                teamMember();
+            });
+    }
+
+    const createTeam = () => {
+        inquirer.prompt([{
+            type: 'list',
+            name: 'menu',
+            message: "Would like to add another team member?",
+            choices: [
+                'Yes',
+                "No I'm finished"
+
+            ]
+        }]).then(answers => {
+            const team = new InternTeam(answers.internName, answers.internId, answers.internEmail, answers.school);
+            teamArray.push(intern);
+            idArray.push(answers.internId);
             teamMember();
         });
     }
+
     teamManager();
 }
 
